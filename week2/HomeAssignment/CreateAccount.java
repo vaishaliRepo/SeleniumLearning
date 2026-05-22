@@ -18,10 +18,12 @@ public class CreateAccount {
     //Implicit wait
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
+
     // Load the URL http://leaftaps.com/opentaps/
 
          driver.get("http://leaftaps.com/opentaps/"); 
 
+         //Thread.sleep(5000);
     //Maximize the browser window
 
          driver.manage().window().maximize();
@@ -41,7 +43,7 @@ public class CreateAccount {
     //Click on the "Create Account" button
     driver.findElement(By.linkText("Create Account")).click();
 
-    String name="Vaishali4";
+    String name="Vaish3";
     //Enter an account name
     driver.findElement(By.id("accountName")).sendKeys(name);
 
@@ -78,9 +80,12 @@ public class CreateAccount {
     Select stateDD= new Select(state);
     stateDD.selectByValue("TX");
 
+    //Enter phone number
+    driver.findElement(By.id("primaryPhoneNumber")).sendKeys("7395901834");
+
     //Click the "Create Account" button
 
-    driver.findElement(By.className("smallSubmit")).click();
+   driver.findElement(By.className("smallSubmit")).click();
 
     //Verify that the account name is displayed correctly. 
     String actualNameString = driver.findElement(By.xpath("(//span[@class='tabletext'])[3]")).getText();
